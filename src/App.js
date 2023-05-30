@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import image from "./hi.gif";
 import "./App.css";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
     // } catch (error) {
     //   console.log(error);
     // }
-    console.log(":)");
+    setDogList([image]);
   };
 
   const showDogs = dogList.map((el, index) => {
