@@ -3,6 +3,7 @@
 }
 
 .list-container {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 30px auto;
@@ -24,11 +25,14 @@
   border-radius: 10px;
 }
 
+.list-btn:hover {
+  position: absolute;
+  left: -1000px;
+}
+
 .single-dog {
   width: 100%;
-  height: 100%;
-  min-height: 350px;
-  max-height: 350px;
+  height: 350px;
   object-fit: cover;
   border: 3px solid rgb(255, 255, 255);
   border-radius: 20% 80% 16% 84% / 77% 13% 87% 23%;

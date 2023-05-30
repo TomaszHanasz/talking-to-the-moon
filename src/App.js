@@ -15,15 +15,15 @@ function App() {
   //async function (async/await)
 
   const onClickHandler = async () => {
-    try {
-      const response = await fetch("https://dog.ceo/api/breeds/image/random");
-      const data = await response.json();
-      console.log(data);
-      // setDogImg(data.message);
-      setDogList([...dogList, data.message]);
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   const response = await fetch("https://dog.ceo/api/breeds/image/random");
+    //   const data = await response.json();
+    //   console.log(data);
+    //   setDogList([...dogList, data.message]);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    console.log(":)");
   };
 
   const showDogs = dogList.map((el, index) => {
@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="app">
       <div className="list-container">
-        <h1 className="title">API</h1>
+        <h1 className="title">Amazing Dogs Gallery</h1>
         <button onClick={onClickHandler} className="list-btn">
           Get a dog picture
         </button>
