@@ -1,9 +1,45 @@
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
+  // const [dogImg, setDogImg] = useState();
+  const [dogList, setDogList] = useState([]);
+
+  // const onClickHandler = () => {
+  //   fetch("https://dog.ceo/api/breeds/image/random")
+  //     .then((res) => res.json())
+  //     .then((data) => setDogImg(data.message))
+  //     .catch((err) => console.log(err));
+  // };
+
+  //async function (async/await)
+
+  const onClickHandler = async () => {
+    try {
+      const response = await fetch("https://dog.ceo/api/breeds/image/random");
+      const data = await response.json();
+      console.log(data);
+      // setDogImg(data.message);
+      setDogList([...dogList, data.message]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const showDogs = dogList.map((el, index) => {
+    return <img key={index} src={el} alt="dog" className="single-dog" />;
+  });
+
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className="app">
+      <div className="list-container">
+        <h1 className="title">API</h1>
+        <button onClick={onClickHandler} className="list-btn">
+          Get a dog picture
+        </button>
+        <br />
+        {showDogs}
+      </div>
     </div>
   );
 }
